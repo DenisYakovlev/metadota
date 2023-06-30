@@ -1,0 +1,17 @@
+.dota-layout{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dota-window{
+    padding: 100px;
+    width: 100%;
+
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    border-radius: 15px;
+}

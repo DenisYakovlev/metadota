@@ -1,0 +1,28 @@
+.dota-table{
+    margin-top: 5%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.dota-timer{
+    font-size: 24px;
+}
+
+.dota-table > table{
+    font-size: 14px;
+}
+
+.dota-table-delimiter{
+    font-size: 24px;
+}
+
+.dota-table-img{
+    width: 64px;
+    height: 36px;
+}
+
+.dota-table-item-img{
+    width: 49.5px;
+    height: 36px;
+}

@@ -1,0 +1,77 @@
+.config-page{
+    height: 50vh;
+    margin: 100px;
+
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.config-layout{
+    padding: 20px;
+    background-color: black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap:50px;
+
+    border-radius: 10px;
+}
+
+.config-text{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 25px;
+}
+
+.text-unit{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.config-header{
+    font-size: 40px;
+    color: silver;
+}
+
+.config-img{
+    height: 250px;
+    width: 250px;
+}
+
+.config-instruction{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.config-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.config-btn{
+    width: 400px;
+
+    background-color: white;
+    border: none;
+    outline: none;
+
+    font-size: 40px;
+    cursor: pointer;
+}

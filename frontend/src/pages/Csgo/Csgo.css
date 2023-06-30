@@ -1,0 +1,18 @@
+.csgo-layout{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.csgo-window{
+    width: 500px;
+    padding: 100px;
+    width: 100%;
+
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    border-radius: 15px;
+}

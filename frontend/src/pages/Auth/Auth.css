@@ -1,0 +1,63 @@
+.auth-form{
+    padding: 20px;
+    background-color: #121212;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+
+    border-radius: 10px;
+}
+
+.form-header{
+    font-size: 40px;
+}
+
+.form-input{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+
+    font-size: 12px;
+    color: silver;
+}
+
+.form-input > input{
+    border: none;
+    border-bottom: solid 1px white;
+
+    outline: none;
+    background-color: inherit;
+
+    color:white;
+    font-size: 20px;
+}
+
+.error-status{
+    font-size: 14px;
+    color:white;
+}
+
+.submit-btn{
+    padding: 2px 20px;
+
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background-color: white;
+
+    font-size: 20px;
+}
+
+.form-link{
+    font-size: 14px;
+}
+
+.form-link > a{
+    color: silver;
+}
