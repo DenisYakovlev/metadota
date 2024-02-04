@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from datetime import datetime, timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -40,9 +41,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'rest_framework_simplejwt',
-    'rest_framework.authtoken',
     'djoser',
-
 
     'user',
 ]
@@ -89,9 +88,29 @@ DATABASES = {
 }
 
 REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+        'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.IsAdminUser',
+    ],
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.TokenAuthentication',
+        'auth.authentications.CookieJWTAuthentication',
     ),
+}
+
+AUTH_TOKEN_NAMES = {
+    'ACCESS_TOKEN_NAME': 'access_token',
+    'REFRESH_TOKEN_NAME': 'refresh_token',
+    'GSI_TOKEN_NAME': 'gsi_token'
+}
+
+SIMPLE_JWT = {
+    'AUTH_HEADER_TYPES': ('Bearer',),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
+    'REFRESH_TOKEN_LIFETIME': timedelta(weeks=40),
+    "UPDATE_LAST_LOGIN": True,
+
+    'TOKEN_OBTAIN_SERIALIZER': 'auth.serializers.GSITokenObtainPairSerializer'
 }
 
 
@@ -115,6 +134,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 AUTH_USER_MODEL = 'user.User'
 
+# TODO: this is temporary. Need to change it with AWS SES values
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
