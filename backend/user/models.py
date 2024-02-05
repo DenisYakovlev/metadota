@@ -10,14 +10,13 @@ from django.utils.translation import gettext_lazy as _
 # Create your models here.
 
 class UserManager(BaseUserManager):
-    def create_user(self, email, password, **extra_fields):
+    def create_user(self, email, password=None, **extra_fields):
         """
         Create and save a user with the given email and password.
+        Password is not required to insure google oauth 2.0 is working
         """
         if not email:
             raise ValueError(_("Email is required"))
-        if not password:
-            raise ValueError(_("Password is required"))
         
         _email = self.normalize_email(email)
         user = self.model(email=_email, **extra_fields)
@@ -26,7 +25,7 @@ class UserManager(BaseUserManager):
         user.save()
         return user
 
-    def create_superuser(self, email, password, **extra_fields):
+    def create_superuser(self, email, password=None, **extra_fields):
         """
         Create and save a SuperUser with the given email and password.
         """
